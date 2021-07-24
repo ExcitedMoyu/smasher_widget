@@ -1,0 +1,49 @@
+apply plugin: 'maven-publish'
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                //定义插件的在本地 maven 中的 id
+                from components.release
+                groupId 'com.smasher.primary'
+                artifactId 'widget'
+                //定义插件的在本地 maven 中的版本号
+                version '2.0.6'
+            }
+
+            debug(MavenPublication) {
+                //定义插件的在本地 maven 中的 id
+                from components.debug
+                groupId 'com.smasher.primary'
+                artifactId 'widget'
+                //定义插件的在本地 maven 中的版本号
+                version '2.0.6'
+            }
+        }
+
+        repositories {
+            maven {
+                // 发布位置
+                url uri('http://127.0.0.1:8081/repository/maven-releases/')
+                credentials {
+                    username 'admin'
+                    password 'admin'
+                }
+            }
+        }
+    }
+}
+
+
+////编译发布到maven
+//task deploy{
+//    dependsOn tasks.clean
+//    dependsOn tasks.build
+//    dependsOn tasks.publish
+//    tasks.preBuild.mustRunAfter(tasks.clean)
+//    //👇
+//    tasks.generatePomFileForMavenCorePublication.mustRunAfter(tasks.build)
+//}
+
+

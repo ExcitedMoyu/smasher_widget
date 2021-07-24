@@ -5,7 +5,7 @@ ext {
     supportV4 = "1.0.0"
     multidex = '2.0.1'
     annotation = '1.2.0'
-    material = '1.2.1'
+    material = '1.3.0'
     constraintlayout = '2.0.4'
     lifecycle = '2.3.0'
     appcompat = '1.2.0'
@@ -28,7 +28,7 @@ ext {
 
     permission = "3.0.0"
     otto = '1.3.8'
-    lottie = '3.4.4'
+    lottie = '3.5.0'
 
     jumpingbeans = "1.3.0"
     pickerView = "4.1.9"
@@ -55,6 +55,6 @@ ext {
     smasher_minSdkVersion = 19
     smasher_targetSdkVersion = 28
     smasher_compileSdkVersion = 28
-    smasher_buildToolsVersion = '30.0.2'
+    smasher_buildToolsVersion = '30.0.3'
 
 }

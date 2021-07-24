@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
+//apply plugin: 'maven'
+apply from: 'mavenpublish.gradle'
 
 android {
     compileSdkVersion smasher_compileSdkVersion
@@ -105,7 +106,7 @@ dependencies {
     //implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle"
 
 
-    api("com.smasher.primary:core:2.0.3-snap") {
+    api("com.smasher.primary:core:2.0.6") {
         exclude group: 'com.squareup.okhttp3'
     }
 
@@ -137,21 +138,21 @@ dependencies {
 }
 
 
-uploadArchives {
-    configuration = configurations.archives
-    repositories {
-        mavenDeployer {
-            repository(url: 'http://127.0.0.1:8081/repository/maven-releases/') {
-                authentication(userName: 'admin', password: 'admin')
-            }
-            pom.project {
-                version '2.0.5-snap'
-                artifactId 'widget'
-                groupId 'com.smasher.primary'
-                packaging 'aar'
-                description 'init version 2.0.5-snap'
-            }
-        }
-    }
-}
+//uploadArchives {
+//    configuration = configurations.archives
+//    repositories {
+//        mavenDeployer {
+//            repository(url: 'http://127.0.0.1:8081/repository/maven-releases/') {
+//                authentication(userName: 'admin', password: 'admin')
+//            }
+//            pom.project {
+//                version '2.0.6'
+//                artifactId 'widget'
+//                groupId 'com.smasher.primary'
+//                packaging 'aar'
+//                description 'init version 2.0.6'
+//            }
+//        }
+//    }
+//}
 
